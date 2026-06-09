@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encurtidos y Fermentación</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+      color: #1b5e20;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #1b5e20, #2e7d32);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      font-size: 1.3rem;
+      opacity: 0.95;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+      margin: 30px 0;
+    }
+    .gallery img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .section {
+      background: white;
+      margin: 30px 0;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .integrantes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 15px;
+    }
+    .integrante {
+      background: #f1f8e9;
+      padding: 15px;
+      border-radius: 10px;
+      border-left: 5px solid #2e7d32;
+    }
+
+    button {
+      background: #2e7d32;
+      color: white;
+      padding: 16px 40px;
+      font-size: 1.3rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      display: block;
+      margin: 30px auto;
+      box-shadow: 0 6px 15px rgba(46, 125, 50, 0.3);
+      transition: all 0.3s;
+    }
+    button:hover {
+      background: #1b5e20;
+      transform: translateY(-3px);
+    }
+
+    ul {
+      padding-left: 25px;
+      font-size: 1.1rem;
+    }
+    li {
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ENCURTIDOS Y FERMENTACIÓN</h1>
+    <p class="subtitle">Proyecto de Biología - Proceso de Fermentación Láctea</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Galería de Imágenes -->
+    <div class="section">
+      <h2 style="text-align:center; margin-bottom:20px;">Proceso de Fermentación</h2>
+      <div class="gallery">
+        <img src="imagen1.png" alt="Frasco de encurtidos">
+        <img src="imagen2.png" alt="Frasco de encurtidos rojo">
+        <img src="imagen3.png" alt="Frasco grande de fermentación">
+        <img src="imagen4.png" alt="Frasco con vegetales">
+      </div>
+    </div>
+
+    <!-- Integrantes -->
+    <div class="section">
+      <h2>Integrantes del Grupo</h2>
+      <div class="integrantes">
+        <div class="integrante">
+          <strong>Steven Arandy Marroquin Medrano</strong><br>
+          <small>(13)</small>
+        </div>
+        <div class="integrante">
+          <strong>Guillermo Antonio Martinez</strong><br>
+          <small>(14)</small>
+        </div>
+        <div class="integrante">
+          <strong>Javier Esteban Arevalo</strong><br>
+          <small>(15)</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div class="section">
+      <h2>Materiales Utilizados</h2>
+      <ul>
+        <li>Frascos de vidrio con tapa hermética</li>
+        <li>Pepinos, pimientos rojos y otros vegetales frescos</li>
+        <li>Sal (para crear la salmuera)</li>
+        <li>Ajo y especias (opcional)</li>
+        <li>Agua filtrada</li>
+      </ul>
+    </div>
+
+    <center>
+      <button onclick="window.location.href='formulario.html'">
+        Ir al Formulario de Datos →
+      </button>
+    </center>
+
+  </div>
+</body>
+</html>

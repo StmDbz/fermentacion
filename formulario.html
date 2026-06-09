@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario - Datos del Estudiante</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #e8f5e9; margin: 0; padding: 20px; }
+    .form-container { max-width: 600px; margin: 40px auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+    input, button { width: 100%; padding: 12px; margin: 10px 0; border-radius: 6px; border: 1px solid #ccc; font-size: 16px; }
+    button { background: #2e7d32; color: white; border: none; cursor: pointer; font-size: 18px; }
+    button:hover { background: #1b5e20; }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Antes de continuar necesitamos tus datos:</h2>
+    
+    <form id="miFormulario">
+      <label><strong>Nombre completo:</strong></label>
+      <input type="text" id="nombre" required>
+
+      <label><strong>Grado / Sección:</strong></label>
+      <input type="text" id="grado" required>
+
+      <label><strong>Carné / Matrícula:</strong></label>
+      <input type="text" id="carne" required>
+
+      <button type="button" onclick="enviarFormulario()">Guardar Datos y Continuar</button>
+    </form>
+  </div>
+
+  <script>
+    function enviarFormulario() {
+      const nombre = document.getElementById('nombre').value.trim();
+      const grado = document.getElementById('grado').value.trim();
+      const carne = document.getElementById('carne').value.trim();
+
+      if (!nombre || !grado || !carne) {
+        alert("❌ Por favor completa todos los campos.");
+        return;
+      }
+
+      // Guardar datos (localStorage)
+      localStorage.setItem('datosEstudiante', JSON.stringify({ nombre, grado, carne, fecha: new Date() }));
+
+      alert("✅ Datos guardados correctamente.\n\nRedirigiendo a la siguiente página...");
+      window.location.href = 'pagina3.html';
+    }
+  </script>
+</body>
+</html>

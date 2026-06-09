@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proceso de Fermentación - Resultados</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+      color: #1b5e20;
+      line-height: 1.8;
+    }
+    header {
+      background: linear-gradient(135deg, #1b5e20, #2e7d32);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    h1 { font-size: 2.8rem; margin-bottom: 10px; }
+    .container { max-width: 1150px; margin: 30px auto; padding: 20px; }
+    .section {
+      background: white;
+      margin: 30px 0;
+      padding: 35px;
+      border-radius: 18px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+    }
+    .datos {
+      background: #f1f8e9;
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      border-left: 6px solid #2e7d32;
+    }
+    .procedimiento {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      align-items: start;
+    }
+    .pasos {
+      font-size: 1.1rem;
+    }
+    .pasos li {
+      margin: 18px 0;
+      padding-left: 10px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 15px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+    button {
+      background: #2e7d32;
+      color: white;
+      padding: 15px 35px;
+      font-size: 18px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      margin: 30px auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Proceso de Fermentación Completado</h1>
+    <p>Proyecto de Biología - Encurtidos y Fermentación Láctea</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Datos del Estudiante -->
+    <div class="section datos" id="datosEstudiante">
+      <h2>✅ Datos del Estudiante</h2>
+      <p><strong>Nombre:</strong> <span id="nom"></span></p>
+      <p><strong>Grado / Sección:</strong> <span id="grad"></span></p>
+      <p><strong>Carné / Matrícula:</strong> <span id="car"></span></p>
+      <p><strong>Fecha de registro:</strong> <span id="fecha"></span></p>
+    </div>
+
+    <!-- Procedimiento Detallado -->
+    <div class="section">
+      <h2>Nuestro Procedimiento Paso a Paso</h2>
+      <div class="procedimiento">
+        <div class="pasos">
+          <ol>
+            <li><strong>Preparación de los vegetales:</strong> Lavamos muy bien los pepinos, pimientos rojos y otros vegetales. Luego los cortamos en rodajas o trozos medianos.</li>
+            <li><strong>Preparación de la salmuera:</strong> Disolvemos sal en agua filtrada (aproximadamente 50-70 gramos de sal por litro de agua).</li>
+            <li><strong>Esterilización:</strong> Esterilizamos los frascos de vidrio con agua caliente para evitar contaminaciones.</li>
+            <li><strong>Armado del frasco:</strong> Colocamos los vegetales en capas dentro del frasco, agregando ajo, pimienta y especias entre las capas.</li>
+            <li><strong>Llenado:</strong> Vertimos la salmuera hasta cubrir completamente los vegetales, dejando un pequeño espacio en la parte superior.</li>
+            <li><strong>Fermentación:</strong> Cerramos bien los frascos y los dejamos a temperatura ambiente (20-24°C) en un lugar oscuro durante 5 a 10 días.</li>
+            <li><strong>Control diario:</strong> Abrimos ligeramente los frascos los primeros días para liberar los gases producidos por la fermentación.</li>
+            <li><strong>Finalización:</strong> Cuando alcanza el sabor deseado, refrigeramos para detener el proceso de fermentación.</li>
+          </ol>
+        </div>
+        
+        <div class="gallery">
+          <img src="imagen5.png" alt="Preparación de vegetales">
+          <img src="imagen6.png" alt="Frascos en fermentación">
+          <img src="imagen7.png" alt="Pepinos y pimientos">
+          <img src="imagen8.png" alt="Resultado final">
+        </div>
+      </div>
+    </div>
+
+    <!-- Más Información -->
+    <div class="section">
+      <h2>¿Qué es la Fermentación?</h2>
+      <p>Es un proceso bioquímico en el que bacterias benéficas (como Lactobacillus) convierten los azúcares de los alimentos en ácido láctico. Esto conserva el alimento, mejora su valor nutricional y le da un sabor ácido característico.</p>
+
+      <h2>Beneficios</h2>
+      <ul>
+        <li>Ricos en probióticos que mejoran la salud intestinal</li>
+        <li>Mayor duración de conservación sin conservantes químicos</li>
+        <li>Aumento de vitaminas (especialmente B y K)</li>
+        <li>Sabor único y delicioso</li>
+      </ul>
+    </div>
+
+    <center>
+      <button onclick="window.location.href='index.html'">
+        ← Volver al Inicio
+      </button>
+    </center>
+  </div>
+
+  <script>
+    const datos = JSON.parse(localStorage.getItem('datosEstudiante'));
+    if (datos) {
+      document.getElementById('nom').textContent = datos.nombre;
+      document.getElementById('grad').textContent = datos.grado;
+      document.getElementById('car').textContent = datos.carne;
+      document.getElementById('fecha').textContent = new Date(datos.fecha).toLocaleString('es-ES');
+    }
+  </script>
+</body>
+</html>
